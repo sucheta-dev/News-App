@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup-Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="signup-page">
+
+    <header class="signup-header">
+        <div class="signup-container header-content flex">
+            <a href="index.html" class="signup-logo">
+                <img src="assets/logo.png" alt="company-logo"></a>
+        </div>
+    </header>
+
+
+    <main class="signup-main">
+        <div class="signup-container main-content flex">
+            <form id="signupForm" class = "signup-form"  action="">
+                <div class="form-header">
+                    <h2>Create your account</h2>
+                    <p>Join and stay informed</p>
+                </div>
+                <div class="form-inputs">
+                    <input id="signupName" type="text" placeholder="Full Name">
+                    <br>
+                    <input id="signupEmail" type="text" placeholder="Email">
+                    <br>
+                    <input id="signupPassword" type="text" placeholder="Password">
+                    <br>
+                    <button class="signup-button">Sign up</button>
+                </div>
+
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+
+    <footer class="signup-footer">
+        <div class="signup-container footer-content flex">
+            <div class="footer-left">
+                <a href="index.html" class="signup-footer-logo">
+                    <img src="assets/logo.png" alt="company-logo"></a>
+            </div>
+
+            <div class="footer-right">
+                <p>@ 2025 | <a href="#">About</a> | <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+<script>
+    const signupForm = document.getElementById("signupForm")
+
+    signupForm.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const nameValue = document.getElementById("signupName").value.trim();
+        const emailValue = document.getElementById("signupEmail").value.trim();
+        const passwordValue = document.getElementById("signupPassword").value.trim();
+
+        const userData = {
+            name: nameValue,
+            email: emailValue,
+            password: passwordValue
+        };
+
+        console.log(userData);
+        localStorage.setItem("userData",JSON.stringify(userData));
+        localStorage.setItem("username", nameValue);
+        window.location.href = "login.html";
+    })
+
+    
+
+</script>
+
+</body>
+
+</html>

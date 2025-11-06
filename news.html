@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News APP</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/2c7e87111a.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="desktop-nav">
+        <div class="main-nav flex container">
+            <div class="nav-row-1 flex">
+
+                <a href="#" onclick="reload()" class="company-logo">
+                    <img src="assets/logo.png" alt="company-logo">
+                </a>
+
+                <div class="nav-links">
+                    <ul class="flex">
+                        <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                        <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                        <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    </ul>
+                </div>
+
+                <div class="user-info flex">
+                    <span class="username">Guest</span>
+                    <button id="auth-button" class="auth-button">Login</button>
+                </div>
+
+            </div>
+            <div class="nav-row-2 flex">
+
+                <div class="search-items flex">
+                    <input id="search-text" type="text" class="news-input" placeholder="Search latest news...">
+                    <button id="search-button" class="search-button">Search</button>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- MOBILE-NAV -->
+    <nav class="mobile-nav-top">
+        <div class="nav-row-1 container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="assets/logo.png" alt="company-logo">
+            </a>
+
+            <div class="nav-icons">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+        </div>
+    </nav>
+
+
+
+    <nav class="mobile-nav-bottom container">
+        <div class="nav-row-2">
+            <ul class="mobile-nav-links flex">
+                <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+            </ul>
+
+            <div class="mobile-search-bar">
+                <input id="mobile-search-text" type="text" class="mobile-news-input container" placeholder="Search latest news...">
+                <i class="fa-solid fa-magnifying-glass search-icon-btn"></i>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- MOBILE-HAMBURGER -->
+
+    <div class="hamburger-menu">
+        <div class="hamburger-profile flex">
+            <i class="fa-solid fa-circle-user"></i>
+            <span class="username">Guest</span>
+            <button class="auth-button">Login</button>
+        </div>
+
+        <hr class="menu-divider">
+
+        <div class="hamburger-links">
+            <ul class="flex">
+                <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                <li class="hover-link nav-item" id="finance" onclick="onNavItemClick('finance')">Finance</li>
+                <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+            </ul>
+        </div>
+    </div>
+    <div class="menu-overlay"></div>
+
+    <!-- MOBILE-HAMBURGER-END -->
+
+    <main>
+
+        <div id="cards-container" class="cards-container container flex">
+            
+        </div>
+
+
+    </main>
+
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://placehold.co/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the title</h3>
+                <h6 id="news-source" class="news-source">End gadget 24/04/2025</h6>
+                <p id="news-desc" class="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
+                    in aut
+                    dolorum repudiandae dolor commodi laborum molestias praesentium vitae eveniet.</p>
+
+            </div>
+        </div>
+
+    </template>
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
