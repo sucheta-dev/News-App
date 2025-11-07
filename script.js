@@ -1,5 +1,4 @@
-const API_KEY = "b5661d21d1f9407eb4d8dc975e2f0535"
-const Url = "https://newsapi.org/v2/everything?q="
+const Url = "/.netlify/functions/fetchNews?q=";
 
 window.addEventListener("load", () => fetchNews("india"));
 
@@ -9,7 +8,7 @@ function reload() {
 }
 
 async function fetchNews(query) {
-    const res = await fetch(`${Url}${query}&apiKey=${API_KEY}`);
+    const res = await fetch(`${Url}${query}`);
     const data = await res.json();
     console.log(data)
 
